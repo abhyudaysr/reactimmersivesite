@@ -176,29 +176,176 @@ reactimmersivesite/
 - **eslint-plugin-react-hooks**: ^7.0.1 - React hooks linting
 - **eslint-plugin-react-refresh**: ^0.4.24 - React refresh support
 
-## 🎯 Installation
+## 🎯 Installation & Setup
 
 ### Prerequisites
 - Node.js (v16 or higher)
 - npm or yarn
+- Git (for cloning and version control)
+- GitHub account (for contributing to the project)
 
-### Setup Steps
+### 📥 GitHub Clone & Setup
 
-1. **Clone or navigate to the project directory:**
+#### For New Team Members
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/reactimmersivesite.git
+   ```
+
+2. **Navigate to the project directory:**
    ```bash
    cd reactimmersivesite
    ```
 
-2. **Install dependencies:**
+3. **Configure Git (first time only):**
+   ```bash
+   git config user.name "Your Name"
+   git config user.email "your.email@example.com"
+   ```
+
+4. **Check the default branch:**
+   ```bash
+   git branch -a
+   ```
+
+#### Setting Up Your Local Environment
+
+1. **Install dependencies:**
    ```bash
    npm install
    ```
+
+2. **Create a new branch for your work:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+   *Branch naming convention: `feature/feature-name`, `bugfix/bug-name`, `hotfix/issue-name`*
 
 3. **Start the development server:**
    ```bash
    npm run dev
    ```
    The application will be available at `http://localhost:5173` (or next available port)
+
+### 📤 Git Workflow for Development
+
+#### Making Changes
+
+1. **Create a feature branch:**
+   ```bash
+   git checkout -b feature/add-new-section
+   ```
+
+2. **Make your changes and verify:**
+   ```bash
+   npm run lint
+   ```
+
+3. **Stage your changes:**
+   ```bash
+   git add .
+   ```
+   Or stage specific files:
+   ```bash
+   git add src/components/NewComponent.jsx
+   ```
+
+4. **Commit with descriptive messages:**
+   ```bash
+   git commit -m "feat: add new hero animation component"
+   ```
+   *Commit message format: `type: description`*
+   - `feat:` - new feature
+   - `fix:` - bug fix
+   - `refactor:` - code refactoring
+   - `style:` - styling changes
+   - `docs:` - documentation updates
+   - `test:` - test updates
+
+5. **Push to remote repository:**
+   ```bash
+   git push origin feature/add-new-section
+   ```
+
+#### Creating a Pull Request
+
+1. **Go to GitHub and create a Pull Request** from your branch to `main`
+2. **Add a descriptive title and description:**
+   - Explain what changes you made
+   - Reference any related issues (#123)
+   - Add screenshots if UI changes were made
+
+3. **Wait for code review** from team members
+
+4. **Address feedback** if requested
+
+5. **Once approved, merge the PR** into main
+
+#### Updating Your Branch with Latest Changes
+
+If someone else pushes to `main` and you need to update your branch:
+
+```bash
+git fetch origin
+git rebase origin/main
+```
+
+Or use merge if you prefer:
+```bash
+git pull origin main
+```
+
+### 🔄 Pulling Latest Changes
+
+Always pull the latest changes before starting work:
+
+```bash
+git checkout main
+git pull origin main
+```
+
+### 📝 Useful Git Commands
+
+```bash
+# View commit history
+git log --oneline -10
+
+# Check current status
+git status
+
+# View differences
+git diff
+
+# Undo last commit (before push)
+git reset --soft HEAD~1
+
+# Delete a branch locally
+git branch -d feature/branch-name
+
+# Delete a branch remotely
+git push origin --delete feature/branch-name
+
+# Sync fork with upstream (if working with a fork)
+git fetch upstream
+git rebase upstream/main
+
+# View all remote branches
+git branch -r
+
+# Switch to existing branch
+git checkout main
+```
+
+### ⚠️ Important Git Guidelines
+
+- **Never commit directly to `main`** - Always create a feature branch
+- **Pull before you push** - Keep your local repository updated
+- **Write meaningful commit messages** - Help others understand your changes
+- **Keep commits atomic** - One logical change per commit
+- **Test before pushing** - Run `npm run lint` and `npm run build`
+- **Don't commit node_modules** - Already in `.gitignore`
+- **Use `.gitignore`** - Don't commit sensitive files or build artifacts
 
 ## 🛠️ Available Scripts
 
